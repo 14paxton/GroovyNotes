@@ -1,7 +1,7 @@
 DIRNAME=$(basename "$(pwd)");
 SHORTREPOKEY=$(echo "$DIRNAME" | tr '[:upper:]' '[:lower:]');
-access_token='$'
-wiki_folder='$'
+access_token='${{ secrets.SYNCTOKEN }}'
+wiki_folder='${{ github.event.repository.name }}'
 
 # make folder and file so wiki is autoupdated
 [[ ! -d "./.github/workflows/ " ]] && mkdir -p ./.github/workflows/
